@@ -6,10 +6,10 @@ from django.utils import timezone
 class Games(models.Model):
     title=models.CharField(max_length=20)
     date=models.DateField()
-    about=models.CharField()
+    about=models.CharField(max_length=10)
     def __str__(self):
         return self.title
-class People():
+class People(models.Model):
     first_name=models.CharField(max_length=10)
     last_name=models.CharField(max_length=20)
     def __str__(self):

@@ -14,12 +14,12 @@ from django.urls import reverse
 
 from django.views import generic
 class IndexView(generic.ListView):
-    template_name = 'about/index.html'
+    template_name = 'index.html'
     context_object_name = 'names'
 
 
     #override method
     def get_queryset(self):
-        return People.objects.order_by('-pub_date')[:5]
+        return [i for i in range(10)]
 class FeedbackView(generic.FormView):
     pass

@@ -21,9 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'd$iu2j^*5ccaglw-5x@)7z==-cx+^8w39_aig95zcb^nk4ed15'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG=True
 
 ALLOWED_HOSTS = []
 
@@ -31,6 +29,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'about.apps.AboutConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +53,7 @@ ROOT_URLCONF = 'HalfPixelsSite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'HalfPixelsSite/../about/templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -76,10 +75,15 @@ WSGI_APPLICATION = 'HalfPixelsSite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'djongo',
+        'NAME': 'Cluster0',
+        'HOST': 'mongodb+srv://nithin:<nithinisthebest>@cluster0-qtcja.mongodb.net/test?retryWrites=true&w=majority',
+        'USER': 'nithin',
+        'PASSWORD': 'nithinisthebest'
     }
 }
+
+
 
 
 # Password validation
