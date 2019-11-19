@@ -11,5 +11,6 @@ from . import views
 
 app_name = 'about'
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='about')
+    path('', views.IndexView.as_view(), name='about'),
+    path('achievements',views.AchievementView.as_view(),name='achievements')
 ]

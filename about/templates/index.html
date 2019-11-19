@@ -1,10 +1,17 @@
 {% load static %}
-<title>Who We Are</title>
-<h1>Who We Are</h1>
+<link rel="stylesheet" type="text/css" href={% static "about/style.css" %} />
+<title>About</title>
+<h1>Nithin Muthukumar</h1>
+<img class=center src={% static "about/images/nithin.png" %}>
 <body>
-<p>We are a game development team that enjoys making games from a wide variety of genres</p>
-<img src="">
-</body>
+<div class=description>
+    <p>I am a highschool student from Windsor, Canada who is passionate about tech</p>
+</div>
+<a href={% url 'about:achievements' %}>hooll</a>
 
+
+
+
+</body>
 
 

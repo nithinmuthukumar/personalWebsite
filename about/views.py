@@ -1,3 +1,5 @@
+from builtins import range
+
 from django.shortcuts import render
 
 from django.shortcuts import render, get_object_or_404
@@ -15,7 +17,7 @@ from django.urls import reverse
 from django.views import generic
 class IndexView(generic.ListView):
     template_name = 'index.html'
-    context_object_name = 'names'
+    context_object_name = 'range'
 
 
     #override method
@@ -23,3 +25,10 @@ class IndexView(generic.ListView):
         return [i for i in range(10)]
 class FeedbackView(generic.FormView):
     pass
+class AchievementView(generic.ListView):
+    template_name ="achievement.html"
+    context_object_name = 'achievements'
+    model=Achievements
+    def get_queryset(self):
+        return Achievements.objects
+
