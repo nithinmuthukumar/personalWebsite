@@ -25,10 +25,15 @@ class IndexView(generic.ListView):
         return [i for i in range(10)]
 class FeedbackView(generic.FormView):
     pass
-class AchievementView(generic.ListView):
-    template_name ="achievement.html"
+class ResumeView(generic.ListView):
+    template_name ="resume.html"
     context_object_name = 'achievements'
-    model=Achievement
-    def get_queryset(self):
-        return Achievement.objects.values()
+def resume(request):
+    template = loader.get_template('resume.html')
+    context = {
+        'achievements': Achievement.objects.values(),'skills':Skill.objects.values(),
+        'clubs':Club.objects.values(),'projects':Project.objects.values()
+    }
+    return HttpResponse(template.render(context, request))
+
 

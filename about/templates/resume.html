@@ -1,0 +1,40 @@
+{% load static %}
+<!--
+hidden hides things- pretty cool
+also javascript functions are called by events
+transitions in css
+ -->
+<link rel="stylesheet" type="text/css" href={% static "about/resume-style.css" %} />
+<script src={% static 'about/Gallery.js' %}> </script>
+<head>
+    <meta charset="UTF-8">
+    <title>Achievements</title>
+</head>
+<body>
+<h1>Resume</h1>
+<h2>Achievements</h2>
+{% for achievement in achievements%}
+
+    <div>
+        <p class="listing"> {{ achievement.title }}</p>
+        <p class="date">{{ achievement.date }}</p>
+    </div>
+
+{% endfor %}
+<h2>Clubs</h2>
+{% for club in clubs %}
+    <p class="listing"> {{ club.name }}</p>
+        <p class="date">{{ club.duration }} years</p>
+
+
+{% endfor %}
+<h2>Skills</h2>
+{% for skill in skills %}
+    <p class="listing"> {{ skill.info }}</p>
+
+{% endfor %}
+<form>
+    <input type="button" value="Result" onclick="display()"/>
+</form>
+
+</body>

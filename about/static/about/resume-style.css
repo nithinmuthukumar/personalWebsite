@@ -10,13 +10,12 @@ h1 {
 }
 .date{
     color: antiquewhite;
+    font-size: 11px;
 }
-.achievement{
-
-    font-family: Roboto;
+.listing{
+    font-family:Garamond;
     color: white;
     font-weight: bolder;
-    font-size: 30px;
-
+    font-size: 14px;
 }
 
