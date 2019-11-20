@@ -28,7 +28,7 @@ class FeedbackView(generic.FormView):
 class AchievementView(generic.ListView):
     template_name ="achievement.html"
     context_object_name = 'achievements'
-    model=Achievements
+    model=Achievement
     def get_queryset(self):
-        return Achievements.objects
+        return Achievement.objects.values()
 

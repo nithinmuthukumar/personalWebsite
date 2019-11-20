@@ -1,0 +1,22 @@
+body {
+    background-image: url("images/dark-triangles.png");
+    font-family: "Al Tarikh";
+    color: white;
+    margin-left: 100px;
+}
+h1 {
+    text-align: center;
+    font-size: 100px;
+}
+.date{
+    color: antiquewhite;
+}
+.achievement{
+
+    font-family: Roboto;
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+
+}
+
