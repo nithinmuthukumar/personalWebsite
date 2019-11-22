@@ -5,7 +5,7 @@ from django.utils import timezone
 
 class Achievement(models.Model):
     date=models.DateField()
-    title=models.CharField(max_length=30)
+    title=models.CharField(max_length=100)
     def __str__(self):
         return self.title
 class Project(models.Model):

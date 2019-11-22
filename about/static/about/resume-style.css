@@ -1,21 +1,48 @@
+
+@font-face {
+    font-family: 'cmu_brightroman';
+    src: url('cmunbmr-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'cnu_serifroman';
+    src: url('cmunrm-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 body {
-    background-image: url("images/dark-triangles.png");
-    font-family: "Al Tarikh";
-    color: white;
-    margin-left: 100px;
+    background-color: white;
+    font-family: "cmu_brightroman";
+    color: black;
+
 }
 h1 {
     text-align: center;
-    font-size: 100px;
+
+}
+.r{
+    padding-top: 3em;
+    padding-left: 18em;
 }
 .date{
-    color: antiquewhite;
-    font-size: 11px;
+    color: silver;
 }
 .listing{
-    font-family:Garamond;
-    color: white;
+    font-family: 'cnu_serifroman';
     font-weight: bolder;
-    font-size: 14px;
 }
+.current{
+    border-style: solid;
+    border-bottom-color: rgba(120,20,20,1);
+    border-top:none;
+    border-left:none;
+    border-right:none;
+}
+.current:hover{
+    border-bottom-color: rgba(200,20,20,1);
 
+
+}

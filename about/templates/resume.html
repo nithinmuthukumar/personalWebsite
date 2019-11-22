@@ -8,33 +8,92 @@ transitions in css
 <script src={% static 'about/Gallery.js' %}> </script>
 <head>
     <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Achievements</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- minimum css file for easy styling-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<h1>Resume</h1>
-<h2>Achievements</h2>
-{% for achievement in achievements%}
+<ul class="nav justify-content-center r">
+  <li class="nav-item">
+    <a class="nav-link" href="about">Home</a>
+  </li>
+  <li class="nav-item current">
+    <a class="nav-link" href={% url 'about:resume' %}>Resume</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Projects</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Interests</a>
+  </li>
+</ul>
 
-    <div>
-        <p class="listing"> {{ achievement.title }}</p>
-        <p class="date">{{ achievement.date }}</p>
+<div class="container-fluid">
+
+    <div class="row r">
+
+        <div class="col-md-6">
+            <h2>Achievements</h2>
+            <ul>
+            {% for achievement in achievements%}
+                <li>
+                <p class="listing"> {{ achievement.title }}</p>
+                <p class="date">{{ achievement.date }}</p>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    <div class="col-md-6">
+
+            <h2>Clubs</h2>
+            <ul>
+            {% for club in clubs %}
+                <li>
+                <p class="listing"> {{ club.name }}</p>
+                <p class="date">{{ club.duration }} years</p>
+                </li>
+
+            {% endfor %}
+            </ul>
+    </div>
+    </div>
+    <div class="row r">
+        <div class="col-md-6">
+            <h2>Skills</h2>
+            <ul>
+
+                {% for skill in skills %}
+                    <li>
+                        <p class="listing"> {{ skill.info }}</p>
+                     </li>
+
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+    <div class="col-md-6">
+            <h2>Projects</h2>
+            <ul>
+
+                {% for project in projects %}
+                    <li>
+                        <a href={{ project.link }} class="listing">{{ project.name }}</a>
+                        <p class="date">{{ project.date }}</p>
+
+                     </li>
+
+
+                {% endfor %}
+
+            </ul>
+
+    </div>
     </div>
 
-{% endfor %}
-<h2>Clubs</h2>
-{% for club in clubs %}
-    <p class="listing"> {{ club.name }}</p>
-        <p class="date">{{ club.duration }} years</p>
-
-
-{% endfor %}
-<h2>Skills</h2>
-{% for skill in skills %}
-    <p class="listing"> {{ skill.info }}</p>
-
-{% endfor %}
-<form>
-    <input type="button" value="Result" onclick="display()"/>
-</form>
+</div>
 
 </body>
