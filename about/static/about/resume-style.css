@@ -46,3 +46,14 @@ h1 {
 
 
 }
+.nav{
+    padding-bottom: 2em;
+}
+#nithin-pic{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#bio{
+    text-align: center;
+}
