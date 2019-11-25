@@ -18,24 +18,12 @@ import json
 from django.views import generic
 class IndexView(generic.ListView):
     template_name = 'index.html'
-    context_object_name = 'range'
 
 
     #override method
     def get_queryset(self):
         return [i for i in range(10)]
-class FeedbackView(generic.FormView):
-    pass
-class ResumeView(generic.ListView):
-    template_name ="resume.html"
-    context_object_name = 'achievements'
-def resume(request):
-    template = loader.get_template('resume.html')
-    context = {
-        'achievements': Achievement.objects.values(),'skills':Skill.objects.values(),
-        'clubs':Club.objects.values(),'projects':Project.objects.values()
-    }
-    return HttpResponse(template.render(context, request))
+
 def resume(request):
     template = loader.get_template('resume.html')
     context = {
@@ -46,18 +34,8 @@ def resume(request):
 
 
 def projects(request):
-    names = ("bob", "dan", "jack", "lizzy", "susan")
+    template=loader.get_template('projects.html')
+    context={"projects":Project.objects.values()}
 
-    items = []
-    for i in range(100):
-        items.append({
-            "name": random.choice(names),
-            "age": random.randint(20,80),
-            "url": "https://example.com",
-        })
-
-    context = {}
-    context["items"] = json.dumps(items)
-
-    return render(request, 'projects.html', context)
+    return HttpResponse(template.render(context, request))
 
