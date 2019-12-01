@@ -17,23 +17,22 @@ transitions in css
 <body>
 <ul class="nav justify-content-center r">
   <li class="nav-item">
-    <a class="nav-link" href={% url 'about:about' %}>Home</a>
+    <a class="btn btn-light" href={% url 'about:about' %}>Home</a>
   </li>
   <li class="nav-item current">
-    <a class="nav-link" href={% url 'about:resume' %}>Resume</a>
+    <a class="btn btn-light" href={% url 'about:resume' %}>Resume</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href={% url 'about:projects' %}>Projects</a>
+    <a class="btn btn-light" href={% url 'about:projects' %}>Projects</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Interests</a>
+    <a class="btn btn-light" href="#">Interests</a>
   </li>
 </ul>
 
 <div class="container-fluid">
 
     <div class="row r">
-
         <div class="col-md-6">
             <h2>Achievements</h2>
             <ul>
@@ -46,17 +45,20 @@ transitions in css
             </ul>
         </div>
     <div class="col-md-6">
-
-            <h2>Clubs</h2>
-            <ul>
-            {% for club in clubs %}
-                <li>
-                <p class="listing"> {{ club.name }}</p>
-                <p class="date">{{ club.duration }} years</p>
-                </li>
-
+            <h2>Education</h2>
+            {% for school in schools %}
+                <h5>{{ school.name }}</h5>
+                {% for club in clubs %}
+                    <ul>
+                    {% ifequal club.school_id school.id %}
+                        <li>
+                        <p>{{club.name}}</p>
+                        </li>
+                    {% endifequal %}
+                    </ul>
+                {% endfor %}
             {% endfor %}
-            </ul>
+
     </div>
     </div>
     <div class="row r">
@@ -93,7 +95,6 @@ transitions in css
 
     </div>
     </div>
-
 </div>
 
 </body>

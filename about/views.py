@@ -26,9 +26,10 @@ class IndexView(generic.ListView):
 
 def resume(request):
     template = loader.get_template('resume.html')
+
     context = {
         'achievements': Achievement.objects.values(),'skills':Skill.objects.values(),
-        'clubs':Club.objects.values(),'projects':Project.objects.values()
+        'clubs':Club.objects.values(),'projects':Project.objects.values(),'schools':School.objects.values()
     }
     return HttpResponse(template.render(context, request))
 
