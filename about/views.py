@@ -29,7 +29,8 @@ def resume(request):
 
     context = {
         'achievements': Achievement.objects.values(),'skills':Skill.objects.values(),
-        'clubs':Club.objects.values(),'projects':Project.objects.values(),'schools':School.objects.values()
+        'clubs':Club.objects.values(),'projects':Project.objects.values(),'schools':School.objects.values(),
+        'interests': Interest.objects.values(),'experiences':Experience.objects.values()
     }
     return HttpResponse(template.render(context, request))
 

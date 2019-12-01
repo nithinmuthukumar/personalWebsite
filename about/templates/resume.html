@@ -9,7 +9,7 @@ transitions in css
 <head>
     <meta charset="UTF-8">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Achievements</title>
+    <title>Resume</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- minimum css file for easy styling-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -24,9 +24,6 @@ transitions in css
   </li>
   <li class="nav-item">
     <a class="btn btn-light" href={% url 'about:projects' %}>Projects</a>
-  </li>
-  <li class="nav-item">
-    <a class="btn btn-light" href="#">Interests</a>
   </li>
 </ul>
 
@@ -78,13 +75,24 @@ transitions in css
 
         </div>
     <div class="col-md-6">
-            <h2>Projects</h2>
+            <h2>Experience</h2>
+            <ul>
+                {% for experience in experiences %}
+                    <li>
+                        <p> {{experience.info }}</p>
+
+                     </li>
+
+
+                {% endfor %}
+
+            </ul>
+            <h2>Interests</h2>
             <ul>
 
-                {% for project in projects %}
+                {% for interest in interests %}
                     <li>
-                        <a href={{ project.link }} class="listing">{{ project.name }}</a>
-                        <p class="date">{{ project.date }}</p>
+                        <p> {{interest.info }}</p>
 
                      </li>
 

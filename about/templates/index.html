@@ -12,16 +12,13 @@
 <body>
 <ul class="nav justify-content-center r">
   <li class="nav-item current">
-    <a class="nav-link" href={% url 'about:about' %}>Home</a>
+    <a class="btn btn-light" href={% url 'about:about' %}>Home</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href={% url 'about:resume' %}>Resume</a>
+    <a class="btn btn-light" href={% url 'about:resume' %}>Resume</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href={% url 'about:projects' %}>Projects</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Interests</a>
+    <a class="btn btn-light" href={% url 'about:projects' %}>Projects</a>
   </li>
 </ul>
 <img width="300" id="nithin-pic" src={% static "about/images/nithin_pic.png"%}>
@@ -30,10 +27,10 @@
     <p id=info>I am a highschool student from Windsor, Canada who is passionate about tech</p>
 </div>
 <div id="bio">
- <img width="30" height="30" src={% static "about/images/instagram_icon.png"%}>
-<img width="30" height="30" src={% static "about/images/github_icon.png" %}>
-<img width="30" height="30" src={% static "about/images/linkedin_icon.png" %}>
-<img width="30" height="30" src={% static "about/images/devpost_icon.png" %}>
+<a href="https://github.com/nithinmuthukumar"><img width="30" height="30" src={% static "about/images/github_icon.png" %}></a>
+<a href="https://www.linkedin.com/in/nithin-muthukumar-681219162/"><img width="30" height="30" src={% static "about/images/linkedin_icon.png" %}></a>
+<a href="https://devpost.com/nithinmuthuklumar?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav"><img width="30" height="30" src={% static "about/images/devpost_icon.png" %}></a>
+    <a href="https://nithinmuthukumar.itch.io"><img width="30" height="30" src={% static "about/images/itch_icon.png" %}></a>
 </div>
 
 

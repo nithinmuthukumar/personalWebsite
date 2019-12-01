@@ -9,7 +9,7 @@ transitions in css
 <head>
     <meta charset="UTF-8">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Achievements</title>
+    <title>Projects</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- minimum css file for easy styling-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -30,21 +30,21 @@ transitions in css
   <li class="nav-item current">
     <a class="btn btn-light" href={% url 'about:projects' %}>Projects</a>
   </li>
-  <li class="nav-item">
-    <a class="btn btn-light" href="#">Interests</a>
-  </li>
 </ul>
-<div class="container-fluid">
+<div class="container">
+<div>
     {% for project in projects %}
-        </div>
-<div class="card" style="width: 33%;">
-  <img src={% static project.imgUrl %} class="card-img-top" alt="...">
+
+<div class="card">
+  <img src={% static project.imgUrl %} class="card-img-top">
   <div class="card-body">
-    <h5 class="card-title">{{ project.name }}</h5>
-    <a href="{{ project.url }}" class="btn btn-primary">Info</a>
+    <a href="{{ project.link }}" class="btn btn-info">{{ project.name }}</a>
   </div>
 </div>
+    {% endfor %}
+</div>
+</div>
 
-{% endfor %}
+
 
 </body>
