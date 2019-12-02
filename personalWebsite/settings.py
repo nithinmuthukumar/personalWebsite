@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'd$iu2j^*5ccaglw-5x@)7z==-cx+^8w39_aig95zcb^nk4ed15'
-
+DEBUG=True
 ALLOWED_HOSTS = []
 # Application definition
 
@@ -66,7 +66,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'personalWebsite.wsgi.application'
 
 
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'Cluster0',
@@ -74,8 +74,13 @@ DATABASES = {
         'USER': 'nithin',
         'PASSWORD': 'nithinisthebest'
     }
+}"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db',
+    }
 }
-
 
 
 
